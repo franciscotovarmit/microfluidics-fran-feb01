@@ -41,11 +41,12 @@ class Obstacle_BooleanBoundary(i3.PCell):
             sr2 = i3.Shape(points = [p2,p5,p8,p3], closed =True)
             sr3 = i3.Shape(points = [p5,p6,p7,p8], closed =True)
 
-            #Internal holes as Circles  #It is needed to define position of SC2 as a function of perpendicular GAP
-            #sc1 = i3.ShapeCircle(center = (self.cInp.x+(self.gap_btw_barriers+self.obstacle_trap_length)*0.65, 0.0), radius = (self.obstacle_trap_width))
-            #sc2 = i3.ShapeCircle(center = (self.cInp.x+(self.gap_btw_barriers+self.obstacle_trap_length)*1.35,self.cInp.y+self.channel_trap_width), radius = (self.obstacle_trap_width))
+            #Internal holes as Circles  #to do: define position of SC2 as a function of perpendicular GAP
+            sc1 = i3.ShapeCircle(center = (self.cInp.x+(self.gap_btw_barriers+self.obstacle_trap_length)*0.65, 0.0), radius = (self.obstacle_trap_width))
+            sc2 = i3.ShapeCircle(center = (self.cInp.x+(self.gap_btw_barriers+self.obstacle_trap_length)*1.35,self.cInp.y+self.channel_trap_width), radius = (self.obstacle_trap_width))
 
             #Internal holes as Rectangles
+            '''
             sc1 = i3.ShapeRectangle(center = (self.cInp.x+(self.gap_btw_barriers
                                                            +self.obstacle_trap_length)*0.5,
                                               self.cInp.y+self.obstacle_trap_width*0.5),
@@ -56,7 +57,7 @@ class Obstacle_BooleanBoundary(i3.PCell):
                                               self.cInp.y+self.channel_trap_width-self.obstacle_trap_width*0.5),
                                     box_size = (self.obstacle_trap_length,
                                                 self.obstacle_trap_width))
-
+            '''
             #Define the boundaries for shapes
             br1 = i3.Boundary(layer = self.layer, shape = sr1)
             br2 = i3.Boundary(layer = self.layer, shape = sr2)

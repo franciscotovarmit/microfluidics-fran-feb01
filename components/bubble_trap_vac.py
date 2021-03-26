@@ -36,7 +36,7 @@ class Obstacle_BooleanBoundary(i3.PCell):
             sr2 = i3.ShapeCircle(center=(0.0,0.0),
                                         radius=self.radius-self.vacuum_channel_circular)#, line_width = 200)
 
-            #Internal holes as Rectangles
+            #Rectangles
             sc1 = i3.ShapeRectangle(center = (self.cInp.x-self.radius,-self.radius),
                                     box_size = (self.radius*2,self.radius*2+100)) #100 has to be linked to channel input width))
             #Define the boundaries for shapes
